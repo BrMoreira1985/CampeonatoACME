@@ -16,6 +16,7 @@
   --cinza: #cccccc;
   --vermelho: #c91b04;
 }
+
 #container {
   display: block;
   margin-left: 50%;
@@ -29,14 +30,14 @@ table {
   margin-left: 50%;
   transform: translate(-50%, 0);
   width: 600px;
-  border-left: solid var(--borderwidth) var(--bordercolor);
-  border-right: solid var(--borderwidth) var(--bordercolor);
-  border-top: solid var(--borderwidth) var(--bordercolor);
 }
 
 table thead {
   height: 30px;
   border-bottom: solid var(--borderwidth) var(--bordercolor);
+  border-left: solid var(--borderwidth) var(--bordercolor);
+  border-right: solid var(--borderwidth) var(--bordercolor);
+  border-top: solid var(--borderwidth) var(--bordercolor);
 }
 
 table thead th {
@@ -46,6 +47,8 @@ table thead th {
 
 table tr {
   border-bottom: solid var(--borderwidth) var(--bordercolor);
+  border-left: solid var(--borderwidth) var(--bordercolor);
+  border-right: solid var(--borderwidth) var(--bordercolor);
 }
 
 table tr:nth-child(4) {
@@ -109,15 +112,16 @@ table tr:nth-child(n + 17):nth-child(-n + 20) td:nth-child(1) {
 table tfoot {
   display: flex;
   flex-direction: column;
-}
-
-table tfoot th:nth-child(2) {
+  border-left: solid var(--borderwidth) var(--bordercolor);
+  border-right: solid var(--borderwidth) var(--bordercolor);
   border-bottom: solid var(--borderwidth) var(--bordercolor);
 }
 
 table tfoot th:nth-child(1) td {
   width: 600px;
-  height: 40px;
+  height: 20px;
+  vertical-align: bottom;
+  padding-left:10px;
   text-transform: uppercase;
   font-size: 10px;
   text-align: left;
@@ -125,7 +129,9 @@ table tfoot th:nth-child(1) td {
 
 table tfoot th:nth-child(2) td {
   width: 600px;
-  height: 40px;
+  height: 25px;
+  vertical-align: center;
+  padding-left: 10px;
   font-size: 10px;
   text-align: left;
 }
@@ -144,4 +150,21 @@ table tfoot .lbl2 {
 
 table tfoot .lbl3 {
   color: var(--vermelho);
+}
+
+table  .top{
+  width: 600px;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  caption-side: top;
+}
+
+table  .bottom{
+  width: 600px;
+  font-size: 12px;
+  text-align: left;
+  font-weight: bold;
+  padding-top: 10px;
+  caption-side: bottom;
 }

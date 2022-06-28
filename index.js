@@ -7,12 +7,20 @@ let table = document.createElement("table");
 let thead = document.createElement("thead");
 let tbody = document.createElement("tbody");
 let tfoot = document.createElement("tfoot");
+let captionTop = document.createElement('caption')
+let captionBottom = document.createElement("caption");
 let row = [];
 let rowData = [];
 
+captionTop.setAttribute('class', 'top');
+captionBottom.setAttribute('class', 'bottom');
+
+table.appendChild(captionTop);
 table.appendChild(thead);
 table.appendChild(tbody);
 table.appendChild(tfoot);
+table.appendChild(captionBottom);
+
 
 function stripStatistics(statistics) {
   statistics = statistics.split(/\s/);
@@ -44,7 +52,7 @@ function buildFoot() {
   let labelText = "";
 
   for (let l = 0; l < labelLength; l++)
-    labelText += `&emsp; <i class="fa-solid fa-square lbl${l}"></i>  ${positions.footPositions[l]}`;
+    labelText += `<i class="fa-solid fa-square lbl${l}"></i>  ${positions.footPositions[l]}&emsp; `;
 
   label.innerHTML = labelText;
   line1Foot.append(label);
@@ -54,7 +62,7 @@ function buildFoot() {
   labelText = "";
 
   for (let m = 0; m < labelLength; m++)
-    labelText += `&emsp;${acronyms.footAcronyms[m]}`;
+    labelText += `${acronyms.footAcronyms[m]}&emsp; `;
 
   label.innerHTML = labelText;
   line2Foot.append(label);
@@ -64,6 +72,8 @@ function buildFoot() {
 }
 
 function buildTable() {
+  captionTop.innerHTML = "Campeonato ACME 2022 - Tabela de classificação"
+  captionBottom.innerHTML = "Atualizado em 31/12/22 23h:59min"
   buildHeader();
   buildFoot();
   for (let i = 0; i < 20; i++) {
