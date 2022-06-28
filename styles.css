@@ -17,12 +17,6 @@
   --vermelho: #c91b04;
 }
 
-#container {
-  display: block;
-  margin-left: 50%;
-  transform: translate(-50%, 0);
-}
-
 table {
   margin-top: 100px;
   border-collapse: collapse;
@@ -167,4 +161,12 @@ table  .bottom{
   font-weight: bold;
   padding-top: 10px;
   caption-side: bottom;
+}
+
+@media (max-width: 610px) and (orientation : portrait){
+
+  body{
+    zoom: 60%;
+  }
+  
 }
